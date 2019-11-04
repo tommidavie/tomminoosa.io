@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang='en'>
+    
+<head>
+    <meta charset='utf-8'/>
+    
+    <title>Noosa Walkthrough</title>
+    
+    <!-- Google Font url, used throughout the entire website --> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> 
+    
+<!-- Defining the style information for various classes and font sizes-->
+<style>
+    
+    /** Styling for the background colour and body text of the website **/ 
+    body
+        {
+        background-color: rgb(255,192,103);
+            
+        /** Aligns all text in the middle of the screen/box they are in **/     
+        text-align: center;
+            
+        /** Allows the titles and text to cover the whole width of the screen, without default margins or padding**/ 
+        margin: 0px;    
+        padding: 0; 
+            
+        font-family: 'lobster', cursive;
+    }
+
+    h1{
+        
+        color: rgb(255,255,255);
+        font-size: 40px;
+        
+        margin-top: 30px; 
+        
+        /** Extends the height of the title boxes **/ 
+        padding-top: 30px;
+        padding-bottom: 30px;
+        
+        font-family: 'lobster', cursive;
+        background-color: rgb(72,181,163); 
+
+    } 
+    
+    h2{
+        color: rgb(72,181,163);
+        
+    /** Ensure the titles are evenly spaced out, matching all text with their appropriate images**/
+        padding-top: 140px;
+        padding-bottom: 50px;
+    }
+    
+    h4{
+        padding-bottom: 150px; 
+    }
+    
+    h6{
+        background-color: rgb(72,181,163);
+        color: rgb(0,0,0);
+        
+        /** Customising the font size for all fonts titled 'h6' **/
+        font-size: 20px; 
+        margin-top: 30px; 
+        margin-bottom: 15px;
+    }
+    
+    /** Styling for all of the links in the navigation bar **/
+    .nav{ 
+        
+        /** Code so the links are not displayed in a bullet point formation **/
+        list-style: none; 
+    }
+    
+    /** Syling code for the 'Top' button which takes users back to the navigaion bar when pressed **/
+    .top{
+        list-style: none; 
+        font-size: 25px;
+        
+        /** Aligning the text to the right hand side of the page; where 'home' and 'top' buttons are commonly found **/
+        text-align: right;
+        
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    /** Styling for the color of the visited links in the navigation bar **/
+    a:visited{
+        color: rgb(255,255,255);
+    }
+    
+    /** Styling for the links in the navigation bar **/
+    a:link {
+        
+        /** Ensures links are presented cleanly - with no visible lines running underneath them **/
+        text-decoration: inherit;
+        
+        color: rgb(255,250,129);
+    }
+    
+    /** Styling for the colours which appear as the user hovers over links in the navigation bar **/
+    a:hover{
+        background-color: rgb(72,181,163);
+        color: rgb(255,250,129);
+    }
+    
+    /** Styling for the container which 'places' links in the navigation bar and the 'top' buttons refer to **/
+    .container{
+        font-size: 2em;
+        margin-right: 15px;
+        color: rgb(255,250,129);
+    }
+    
+    /** Styling for the container which other separate links in the navigation bar refer to **/ 
+    .container2{
+        text-align: center;
+        font-size: 2em;
+    }
+       
+    /** Styling for the image wrapper which falls behind the navigation bar and title**/
+    .content-wrapper{
+        width: 80%;
+        margin:4% 10% 5% 10%;
+        padding-bottom: 200px;
+
+    }
+    
+    /** Styling for the image which falls behind the navigation bar and title**/
+    .content-wrapper img{
+        width: 100%;
+    }
+
+    /** Styling for the text wrapper which surrounds the text in the title in  navigation bar **/
+    .text-wrapper{
+        width: 100%;
+        position: relative;
+        margin-top: -68%;
+
+    }
+
+    /** Styling for the title which falls in front of the image **/
+    .text-wrapper p{
+        text-align: center;
+        color: rgb(255,250,129);
+        font-size: 70px;
+    }
+
+    /** Styling for the radius's and borders which surround images in the gallery and restaurant section **/
+    .circle{
+        border-radius: 15%;
+        border-style: solid;
+        border-color: rgb(72,181,163);
+        border-width: 5px;
+    }
+
+    /** Styling for the collumns in the restaurant and gallery sections **/
+    .column2 {
+        float: left; 
+        
+        /** Ensure three images are evenly spaced over the page **/
+        width: 33.3%;
+        
+        padding-top: 25px; 
+        padding-bottom: 30px;
+        padding: 5px; 
+        padding: 11px; 
+        margin-top: 30px; 
+        
+        /** Informing the browser of specific padding, width and height elements which I have coded into this particular collumn **/ 
+        box-sizing: border-box; 
+    }
+     
+    /** Styling for the rows in the restaurant, gallery and footer  sections**/
+    .row::after {
+        
+        /** Ensuring the layout of the restaurant and gallery sections are presented in clean, clear table-like formations **/
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /** Styling which allows any photos to shrink and adapt to any screen size **/
+    .img-responsive{
+        max-width: 100%;   
+    }
+
+    /** Styling for the containers which surround all of the images in the restaurant and gallery sections**/ 
+    .container3 {
+        position: relative;
+        width: 100%;
+    }
+
+    /** Styling for the containers which surround the text in the image text hovers in the gallery **/
+    .middletexthover {
+        
+        /** When hovered over, the text appears within 0.5 seconds **/
+        transition: .5s ease;
+        
+        /** Ensures the text stays hidden until a mouse is hovered over it **/
+        opacity: 0;
+        
+        /** Ensures the text is centered in the middle of the image **/
+        top: 50%;
+        left: 50%;
+        
+        /** Ensures that the code only transforms to the given value above, when a mouse is hovered over the image **/
+    
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+        /** Ensures the text is placed exactly as coded above; adapting to the layout surrounding it **/
+        position: absolute;
+        
+        background-color: rgb(72,181,163); 
+    }
+    
+    /** Styling for the container which surrounds the text; ensuring the text is easily read when a mouse is hovered over it **/
+    .container3:hover .middletexthover {
+        opacity: 1;
+    }
+    
+    /** Styling for the text which appears inside the container and middle text hover - showing as a mouse is hovered over an image **/
+    .texthover {
+        color: rgb(255,255,255);
+        font-size: 40px;
+        
+        /** Adapting the border radius of the text to that of the image **/
+        border-radius: 75%;
+        font-size: 100%; 
+    }    
+    
+
+    /** Styling for the websites from separate servers, which embedded into my website **/ 
+    .iframe{
+        padding-top: 30px;
+        box-sizing: border-box; 
+        height: 570px; 
+        margin-bottom: 30px; 
+        max-width: 100%;
+        
+        /** Ensures any floating code is clipped and is able to adapt to other elements within the frames **/ 
+        overflow: hidden;
+    }
+    
+    /** Styling for the collumns of the footer **/ 
+    .column3 {
+        float: left; 
+        margin-top: 50px; 
+        width: 33.3%;
+        padding-top: 25px; 
+        padding-bottom: 30px;
+        padding-left: 5px;
+        padding: 11px; 
+        background-color: rgb(72,181,163);
+        
+        /** Informing the browser of specific padding, width and height elements which I have coded into this particular collumn **/ 
+        box-sizing: border-box;
+    }
+    
+    /** Styling for the containers of text located in the footer **/ 
+    .container4{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 100%;
+        font-size: 17px; 
+    }
+
+</style>
+    
+ </head>   
+    <body>   
+        
+    <!-- Website Title -->
+    <div class="content-wrapper img-responsive">
+    <img id="Top" src="Images/NationalParkView.jpg" alt="Noosa National Park">
+    <div class="text-wrapper">
+    <p>Noosa Walkthrough</p>
+        
+    <!-- Places Links in Nav bar -->
+    <div class="container">
+     <ul class="nav">
+        <li><a href="#RiverSunset">Noosaville River Sunset </a></li>
+        <li><a href="#RiverScenery">Noosaville River Scenery </a></li>
+        <li><a href="#MainBeach">Main Beach </a></li>
+        <li><a href="#TeaTreeBay">Tea Tree Bay </a></li>
+        <li><a href="#TeaTreeBeach">Tea Tree Beach </a></li>
+        <li><a href="#NationalPark">Noosa National Park </a></li>
+    </ul>
+       </div> 
+        
+    <!-- Separate links in Nav bar -->
+        
+    <div class="container2">
+    <ul class="nav">
+    <li><a href="#Restaurants">Restaurants</a></li>
+    </ul>
+    </div>
+        
+    <div class="container2">
+    <ul class="nav">
+    <li><a href="#WeatherForecasts">Noosa Weather Forecast</a></li>
+    </ul>
+    </div>
+        
+    <div class="container2">
+    <ul class="nav">
+    <li><a href="#SurfReport">Noosa Surf Report</a></li>
+    </ul>
+    </div>
+        
+    <div class="container2">
+    <ul class="nav">
+    <li><a href="#Gallery">Gallery</a></li>
+    </ul>
+    </div>
+        
+    </div>
+    </div>
+        
+    <!-- Places images and text descriptions, presented in a zig zag formation - through floating them to opposite sides of the screen -->    
+
+    <div>
+    <img src="Images/RiverSunset.jpg" alt="Noosaville River Sunet" class="img-responsive"  style="float: left; margin-bottom: 5px; padding-top: 10px" width="700" height="500">
+    <h2 id="RiverSunset">Noosaville River Sunset</h2>
+    <h4>The Noosaville riverside sunset provides scenic views for locals, tourists and visitors. With an approximate setting time of 5:30 during the month of August, the sunset can be observed after a long day of work during both summer and winter months.The Noosa River Mouth is a beautiful spot to watch the sun go down as you sit on the waters edge looking out over the long stretch of white sand and beautiful coastline of Noosa North Shore and Noosa Main Beach. Watch as the sun slips away and take in the natural beauty of this region.</h4>
+    </div>
+
+    <div>
+    <img src="Images/RiverTree.jpg" alt="Noosaville River Tree" class="img-responsive"  style="float: right; margin-bottom: 5px" width="700" height="500">
+    <h2 id="RiverScenery">Noosaville River Scenery</h2>
+    <h4>This delightful river flows right through the Noosa area, extending to a wide expanse in areas. Lot of bird life,and most attractive for walking along. Locals, tourists and vistors are able to enjoy the beutiful scenery on offer, the riverside being very relaxing to walk along! Pretty much every pier has a coffee stand too. Great to stay next to if you're in the area. Its also nice to sit and watch the pelicans and boats on the river. Have a look at all the little shops and restaurants close by.</h4>
+    </div>
+        
+    <div>
+    <img src="Images/MainBeach.jpg" alt="Noosa Main Beach" class="img-responsive"  style="float: left; margin-bottom: 5px" width="700" height="500">
+    <h2 id="MainBeach">Main Beach View</h2>
+    <h4>Noosa Main Beach is one of the few beaches along Australia's coastline that faces north. This beach is the best option for families or those who are not confident in the surf, as it has gentle waves and is patrolled by surf lifesavers! This is also the best place to take a surf lesson if you're a beginner, as you don't have to contend with big surf. Moderate waves and safe for swimming all year round, Noosa Main Beach is patrolled 365 days a year and is only steps away from famous Hastings Street shopping, accommodation, restaurants and bars.</h4>
+    </div>
+        
+    <div>
+    <img src="Images/TeaTreeBay.jpg" alt="Tea Tree Bay View" class="img-responsive"  style="float: right; margin-bottom: 5px" width="700" height="500">
+    <h2 id="TeaTreeBay">Tea Tree Bay View</h2>
+    <h4>Admiring the Tea Tree Bay view is such a great way to spend the morning when in the Noosa. If you are walking along the National Park route, make sure to take water. It is highly recommended that even if you do not wish to complete the walk, even just walking to Tea Tree Bay and having a swim is highly enjoyable. The National Park offers one of the most scenic short walks on offer in and around Noosa. For visitors and tourists, it is suggested that you get to the park entry early as parking is very limited. The bird calling is also great along the walk.</h4>
+    </div>
+
+    <div>
+    <img src="Images/TeaTreeBeach.jpg" alt="Tea Tree Beach View" class="img-responsive"  style="float: left; margin-bottom: 5px" width="700" height="500">
+    <h2 id="TeaTreeBeach">Tea Tree Beach View</h2>
+    <h4>This stunning beach in Noosa National Park is just a 20 minute walk from Laguna Bay near the park’s entrance. If you don’t have much time to explore, it’s an ideal place to take some time out and appreciate the park’s tranquillity and its stunning seascapes. This north/north-west facing beach is surrounded by shady pandanus trees and plenty of flat rocks upon which to lay a picnic rug or even take a post-lunch snooze away from the hustle and bustle of Hastings Street. The rock pools closer to the water are also fun to explore.</h4>
+    </div>
+        
+    <div> 
+    <img src="Images/NationalParkView.jpg" alt="Noosa Natinal Park View" class="img-responsive"  style="float: right; margin-bottom: 5px" width="700" height="500"> 
+    <h2 id="NationalPark">Noosa National Park</h2>
+    <h4>Noosa National Park on Queensland’s Sunshine Coast – around 150kms north of Brisbane – is a knock-your-socks-off stunner. There are 15kms worth of trails to explore, so split from Hastings Street and walk straight into a postcard. There are few places in the world where you have a thriving town centre chocked with boutiques and cafés just a stone’s throw from some of the most stunning landscapes you’ll ever see. Sand and surf meld with a peaceful forest that has Australia stamped all over it.</h4>
+    </div>
+        
+ 
+    <!-- Restaurants section -->
+        
+   <div>
+       
+    <!-- Link from the Navigation Bar to the Restaurants section -->     
+        
+    <h1 id="Restaurants">Restaurants</h1>
+       
+    <!-- Top Button, allowing users to return to the navigation bar when pressed -->   
+       
+    <div class="container">
+    <ul class="top" style="font-size: 40px;">
+    <li><a href="#Top">Top</a><li>
+    </ul>
+    </div>
+    </div>
+        
+    <h6>Click on the Restaurant names below for more information regarding menus, locations and available bookings.</h6>    
+        
+      <!-- Rows and collumns separating the images and links into appropriate orders and positions across the screen -->
+        
+      <div class="row" >
+       
+      <div class="column2">
+      <div class="container3">
+      <img src="Images/BettysPizza.jpg" alt="Betty's Burgers Vegetarian Pizza" class="circle" style="width:70%; height: 70%">
+      </div>
+      </div>
+        
+      <div class="column2">
+      <div class="container3">
+      <img src="Images/MainBeachBistro.jpg" alt="Bistro C on Main Beach" class="circle" style="width:70%; height: 70%"> 
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <img src="Images/NoosavilleYogurt.jpg" alt="Noosaville Sunday Market Fruit Yogurt" class="circle" style="width:70%; height: 70%">
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <a href= "https://littlehumid.com.au/" style="font-size: 30px">Little Humid</a>   
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <a href= "https://www.bistroc.com.au/" style="font-size: 30px">Bistro C</a>  
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <a href="https://noosafarmersmarket.com.au/" style="font-size: 30px">Noosa Farmer's Market</a>
+      </div>
+      </div>
+        
+        
+      <div class="column2">
+      <div class="container3">
+      <img src="Images/RawEnergyEggs.jpg" alt="Egg Dish from Raw Energy" class="circle" style="width:70%; height: 70%">
+      </div>
+      </div>
+    
+         
+      <div class="column2">
+      <div class= "container3">
+      <img src="Images/ShrimpNoodles.jpg" alt="Wasabi Shrimp Noodle Dish" class="circle" style="width:70%; height: 70%">
+      </div>
+      </div>
+           
+      <div class="column2">
+      <div class= "container3">
+      <img src="Images/SurfLifeSavingClub.jpg" alt="Noosa Main Beach Surf Life Saving Club" class="circle" style="width:70%; height: 70%">
+      </div>
+      </div>   
+          
+      <div class="column2">
+      <div class="container3">
+      <a href="https://rawenergy.com.au/menu/" style="font-size: 30px">Raw Energy</a>
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <a href="https://rocksaltnoosa.com.au/menu/" style="font-size: 30px">Rock Salt</a>
+      </div>
+      </div>
+          
+      <div class="column2">
+      <div class="container3">
+      <a href="https://www.noosasurfclub.com.au/" style="font-size: 30px">Surf Lifesaving Club</a>
+      </div>
+      </div>
+            
+      </div>
+        
+      <!-- Link from the Navigation Bar to the Weather section -->   
+        
+      <div>
+      <h1 id="WeatherForecasts">Noosa Weather Forecasts</h1>
+      </div>
+        
+      <!-- Top Button, allowing users to return to the navigation bar when pressed -->    
+        
+      <div class="container">
+      <ul class="top" style="font-size: 40px;">
+      <li><a href="#Top">Top</a><li>
+      </ul>
+      </div>
+        
+     <!--  Desription of Noosa Weather during different seasons -->   
+        
+      <h3>   
+      Below details a seven day Noosa weather forecast, keeping you updated with the latest reports regarding weather conditions at Noosa Heads. Depending on the months of the year, visitors may concider staying when the climate is at its peak. <br/>
+    
+      <br>      
+      Summer in Noosa is from December to February with the hottest time of year in January. Average daily temperatures range from a minimum of 21.3ºC to a maximum of 28.8 ºC. January to March is also the wettest with high humidity (peaking at around 66 per cent in the afternoons) causing the occasional shower. <br/>
+          
+            
+      <br>    
+      March, April and May are the autumn (fall) months and continue to enjoy warm weather and surprisingly humid conditions, particularly in the mornings when humidity can park at around 74 per cent. Although temperatures are slightly cooler, the weather is definitely still warm enough to swim. <br/>
+          
+      <br>      
+      Winter falls from June to August and although these are the coldest months Noosa experiences, conditions are still relatively temperate, ranging from a minimum of 10.2 ºC up to a comfortable 20.9 ºC. With the skies clearing, winter is the perfect time to warm up and sun yourself on the beach. <br/>
+          
+      <br>      
+      However spring, from September to November, is the perfect time to visit Noosa as the chance of rain is minimal but the sunshine is plentiful. The lowest average annual rainfall, spring brings clear skies, warm temperatures and the perfect weather for enjoying the beaches and national parks. <br/>
+                
+      With comfortable weather year round, the tropical climate of Noosa ensures that no matter the weather, the extended forecast for Noosa is for a fantastic holiday.</h3>
+        
+      <!-- Insert of another website, displaying the Noosa weather report for the next seven days -->    
+        
+      <div class="iframe">
+      <iframe src="http://www.bom.gov.au/qld/forecasts/noosa-heads.shtml" style="width: 100%; height: 100%">
+      </iframe>
+          
+      </div>
+        
+      <!-- Link from the Navigation Bar to the Surf Report section -->    
+        
+      <div>
+      <h1 id="SurfReport">Noosa; Tea Tree Bay Surf Report</h1>
+      </div>
+        
+      <!-- Top Button, allowing users to return to the navigation bar when pressed -->     
+        
+      <div class="container">
+      <ul class="top" style="font-size: 40px;">
+      <li><a href="#Top">Top</a><li>
+      </ul>
+      </div> 
+        
+     <!--  Desription of Tea Tree Bay surf, loaction and attractions -->      
+        
+      <h3>   
+      Below describes  surf report of one of the popular bays in Noosa Heads; Tea Tree Bay. Tea Tree Bay on the North Coast is an exposed point break that has dependable surf, with the best wind direction from the southeast. <br/>
+    
+      <br>      
+      Most of the surf for Tea Tree comes from groundswells and the ideal swell direction is from the east northeast. The best surfing conditions occur around mid tide, with the bay often becoming very crowded with tourists and locals.<br/>
+            
+      <br>    
+      This stunning beach is located in Noosa National Park is just a 20 minute walk from Laguna Bay near the park’s entrance. If you don’t have much time to explore, it’s an ideal place to take some time out and appreciate the park’s tranquillity and its stunning seascapes.  <br/>
+          
+      <br>      
+      This bay is the perfect alternative beach to escape the crowds at Noosa’s Main Beach. If you’re heading to Tea Tree Bay, be sure to walk a little further and also check out the Fairy Pools!<br/>
+          
+      <br>      
+      Tea Tree Bay is a north/north-west facing beach surrounded by shady pandanus trees and plenty of flat rocks upon which to lay a picnic rug or even take a post-lunch snooze away from the hustle and bustle of Hastings Street. <br/>
+                
+      The rock pools closer to the water are fun to explore at low tide and are home to a myriad of marine creatures including crabs, fish and sea anemones. The rocky point is popular with experienced local surfers (who know how to avoid the rocks) and is known for its steep, hollow waves at low tide and fat, slow waves at high tide.</h3>
+        
+      <h6>You can use this tool to search for other surf reports in and out of Noosa as well</h6>
+        
+      <!-- Insert of another website, displaying the Tea Tree bay surf report for that given day -->  
+        
+      <div class="iframe">
+      <iframe src="https://magicseaweed.com/Tea-Tree-Noosa-Surf-Report/544/" style="width: 100%; height: 100%">
+      </iframe>
+      </div>
+        
+      <!-- Link from the Navigation Bar to the Gallery section -->      
+
+      <div>
+      <h1 id="Gallery">Gallery</h1>
+          
+      <!-- Top Button, allowing users to return to the navigation bar when pressed -->       
+
+      <div class="container">
+      <ul class="top" style="font-size: 40px;">
+      <li><a href="#Top">Top</a><li>
+      </ul>
+      </div>
+      </div>
+        
+      <!-- Rows and collumns separating the images into appropriate orders and positions across the screen -->    
+
+      <div class="row">
+        
+      <div class="column2">
+      <div class="container3">
+                             
+        <img src="Images/SunsetPan.jpg" alt="Reflection of Noosaville Sunset by the Riverside" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+        <div class="texthover">Reflection of Sunset Noosaville Riverside</div>
+      </div>
+      </div>
+      </div>
+                                               
+        
+      <div class="column2">
+      <div class="container3">
+        <img src="Images/CloudySunset.jpg" alt="Cloudy Noosaville River Sunset" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+        <div class="texthover">Cloudy Noosaville River Sunset</div>
+      </div>
+      </div>
+      </div>
+        
+      <div class="column2">
+      <div class="container3">
+        <img src="Images/planeview.jpg" alt="Birds-eye View of Brisbane" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+          <div class="texthover">Birds-eye View of Brisbane</div>
+      </div>  
+      </div>
+      </div>
+        
+      <div class="column2">
+      <div class="container3">
+        <img src="Images/BeachSand.jpg" alt="Noosa Main Beach Sunset" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+          <div class="texthover">Main Beach Sunset</div>
+      </div>
+      </div>
+      </div>
+        
+      <div class="column2">
+      <div class="container3">
+        <img src="Images/PlaneLanded.jpg" alt="Plane View of Brisbane Airport" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+          <div class="texthover">Plane View of Brinsbane Airport</div>
+      </div>
+      </div>
+      </div>
+         
+      <div class="column2">
+      <div class= "container3">
+        <img src="Images/BeachSunSet.jpg" alt="Main Beach Landscape with Sunset" class="circle imagetexthover" style="width:100%">
+      <div class="middletexthover">
+          <div class="texthover">Main Beach Landscape with Sunset</div>
+      </div>
+      </div>
+      </div>
+           
+      </div>
+        
+    </body>
+    
+    <!-- Rows and collumns separating the contact details and other information into an appropriate order and position across the footer -->
+
+    <div class="row"> 
+    <div class="column3">
+    <div class= "container4">
+    <h5>Contact us via email at: noosaexperts@gmail.com</h5>
+    </div>
+    </div>
+        
+    <div class="column3">
+    <div class= "container4">
+    <h5>Copyright Tommi Davie | All Rights Reserved</h5>
+    </div>
+    </div>
+        
+    <div class="column3">
+    <div class= "container4">
+    <h5>Call our cell: 022 862 928</h5>
+    </div>
+    </div>
+    </div>
+    
+</html>
